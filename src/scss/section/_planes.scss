@@ -1,0 +1,164 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.planes {
+    padding: 4rem;
+    background-image: linear-gradient(rgba(221, 221, 221, 0.93),rgba(164, 61, 1, 0.7)),url(../img/portadda5.jpg);
+    background-position:   20% 20%;
+    background-size: cover;
+    height: 93rem;
+    //border-bottom: solid 2px v.$primario;
+    @include m.tablet { 
+        margin-left: -13rem;
+        height: 60rem;
+        background-image: url(../img/portadda5.jpg);
+        background-position: left;
+     }
+    @include m.desktopUW { 
+        height: 77rem;
+        margin-left: -13rem;
+     }
+
+    &__heading {
+        padding: 5rem;
+        font-size: 4rem;
+        text-align: center;
+        padding: 2rem;
+        color: v.$secundario;
+    }
+
+    &__heading2 {
+        margin-top: 3rem;
+        font-size: 4rem;
+        text-align: center;
+        padding: 2rem;
+        color: v.$blanco;
+        font-weight: 900;
+    }
+
+    &__span {
+        color: v.$primario;
+    }
+
+    &__grid {
+        justify-items: center;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+
+
+        @include m.tablet {
+            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+       
+    }
+
+    &__grid2 {
+        justify-items: center;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+        gap: 3rem;
+
+        @include m.tablet {
+            gap: 3.5rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include m.desktopUW {
+            gap: 6rem;
+        }
+    }
+
+    &__seccion {
+        background-color: v.$secundario;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 2rem;
+        padding: 0rem 4.3rem;
+        transition: transform;
+        
+        @include m.tablet {
+            padding: 0rem 3rem;
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                transition: .5s;
+                border-left: solid 1.5rem v.$primario;
+                padding: 0rem 2.5rem;
+                transform: rotate(5deg);
+            }
+
+            padding: 0rem 3.5rem;
+        }
+    }
+
+    &__heading2 {
+        font-size: 2rem;
+        margin: 0;
+        padding: 1rem 0.5rem 0rem 0.5rem;
+        font-weight: 700;
+
+        @include m.tablet {
+            font-size: 3rem;
+
+        }
+    }
+
+    &__span1 {
+        color: v.$primario;
+        padding: 1rem;
+
+        @include m.tablet {
+            padding: 2rem;
+
+        }
+    }
+
+    &__span2 {
+        background-color: v.$primario;
+        padding: 1rem 2.5rem;
+        color: v.$blanco;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+
+        @include m.tablet {
+            font-size: 1.5rem;
+            padding: 1.2rem 4rem;
+
+        }
+    }
+
+    &__iva {
+        font-size: 1.3rem;
+        display: block;
+        color: v.$primario;
+        font-weight: 100;
+    }
+
+    &__precio {
+        font-size: 3.9rem;
+        font-weight: 900;
+        color: v.$blanco;
+        
+        @include m.tablet {
+            font-size: 3rem;
+            font-size: 5.7rem;
+        }
+    }
+
+    &__precio2 {
+        font-size: 2rem;
+    }
+
+    &__pago {
+        color: v.$blanco;
+        font-size: 1rem;
+        margin-top: -2rem;
+    }
+
+
+
+}
+
+
+

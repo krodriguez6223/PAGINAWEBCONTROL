@@ -1,0 +1,145 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.servicios{
+    margin-top: 8rem;
+    padding-bottom: 8rem;
+    @include m.grid(1, 5rem);
+    
+    @include m.tablet {
+        margin-top: 5rem;
+        @include m.grid(2, 3rem);
+        padding: 15rem;
+        padding-top: 6rem;
+        padding-bottom: 5rem;
+    }
+    
+    @include m.desktopUW {
+        @include m.grid(2, 10rem);
+        padding: 25rem;
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+    }
+
+
+.card{
+    position: relative;
+    width: 400px;
+    height: 260px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, v.$secundario, v.$secundario);
+    border-bottom:1.5rem solid v.$primario;
+
+    @include m.tablet {
+        width: 520px;
+        height: 320px;
+        margin: 15px;
+    }
+
+    @include m.desktopUW {
+        width: 620px;
+        height: 350px;
+        margin: 20px;
+    }
+}
+
+.card img{
+    position: absolute;
+    bottom: 0;
+    left: 70%;
+    transform: translateX(-50%);
+    height: 270px;
+    transition: 0.5s;
+    
+    @include m.tablet {
+        left: 63%;
+        height: 350px;
+    }
+    
+    @include m.desktopUW {
+        left: 63%;
+        height: 420px;
+    }
+}
+
+.card:hover img{
+    left:82%;
+    height: 300px;
+
+    @include m.tablet {
+        height: 380px;
+    }
+
+    @include m.desktopUW {
+        height: 500px;
+    }
+}
+.card .content{
+    margin: 5px;
+    position: relative;
+    width: 50%;
+    left:20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+   
+    left: 0%;
+    opacity: 1;
+    visibility: visible;
+}
+/*.card:hover .content{
+}*/
+
+.card .content h2 {
+    color: v.$primario;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height: 1em;
+
+    @include m.tablet {
+        font-size: 2em;
+        line-height: 1em;
+    }
+
+    @include m.desktopUW {
+        font-size: 2.5em;
+        line-height: 1em;
+    }
+}
+.card .content p{
+    color: #fff;
+    font-size: 1.2rem;
+
+    @include m.tablet {
+       font-size: 1.6rem;
+    }
+
+    @include m.desktopUW {
+        font-size: 2rem;
+    }
+}
+.card .content a{
+    position: relative;
+    display: inline-block;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 10px;
+    text-decoration: none;
+
+    @include m.tablet {
+        padding: 8px 18px;
+    }
+
+    @include m.desktopUW {
+       padding: 10px 20px;
+    }
+}
+
+}

@@ -1,0 +1,97 @@
+@use 'variables' as v; 
+@use 'mixins' as m; 
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #e66f00 #272525;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #272525;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #e66f00;
+    border-radius: 5px;
+    border: 3px none #ffffff;
+  }
+html {
+    font-size: 62.5%;
+    margin: 0;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body {
+  padding: 0;
+   margin: 0;
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+}
+p {
+    color: v.$negro;
+    font-size: 2rem;
+    line-height: 2;
+}
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.seccion{
+    padding: 3rem 0;
+    @include m.tablet {
+        padding: 8rem 0; 
+        
+    }  
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin: 0 0 2rem  0 ;
+}
+h1 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 2.8rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+input{
+  border: none;
+  
+}
+input:focus {
+
+  outline: none;
+}
+textarea:focus {
+
+  outline: none;
+}
+textarea{
+  border: none;
+}
+

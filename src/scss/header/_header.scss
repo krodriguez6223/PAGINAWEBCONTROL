@@ -1,0 +1,432 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.nav {
+    &__grid {
+        padding: 1.2rem 2rem;
+        background-color: v.$gris;
+        width: 100%;
+        /* hacemos que la cabecera ocupe el ancho completo de la página */
+        left: 0;
+        /* Posicionamos la cabecera al lado izquierdo */
+        top: 0;
+        /* Posicionamos la cabecera pegada arriba */
+        position: fixed;
+        z-index: 9999; // Cambia este valor según sea necesario para asegurarte de que se superponga a otros elementos.
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include m.tablet {
+
+            padding: 1.2rem 10rem;
+        }
+    }
+
+    &__logo {
+        padding-top: 0.5rem;
+        width: 13rem;
+
+        @include m.tablet {
+            width: 15rem;
+            margin: 0;
+        }
+    }
+}
+
+.navegacion {
+    
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 6.7rem;
+    width: 100%;
+    align-items: center;
+    padding: 5rem;
+    height: calc(100% - 6rem);
+    overflow-y: auto;
+    left: 100%;
+    transition: left 0.8s;
+    //transparencia de fondo
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.125);
+
+
+    @include m.tablet {
+        //transparencia de fondo
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: none;
+        border-radius: none;
+        border: none;
+        padding: 0;
+        position: relative;
+        width: auto;
+        margin-right: 0;
+        top: 0;
+        background-color: transparent;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 0;
+        left: 0;
+    }
+
+    &__enlace {
+        padding: 2rem 0;
+        color: v.$blanco;
+        transition: .3s;
+
+        &:hover {
+            color: v.$primario;
+        }
+
+        @include m.tablet {
+
+            padding: 1rem 3rem;
+            transition: 0.2s;
+
+            &:hover {
+
+                color: v.$blanco;
+                border-bottom: 0.5rem solid v.$primario;
+                margin: 0.8rem;
+                padding: 0.2rem 2rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+}
+
+swiper-container {
+    width: 100%;
+    height: 75rem;
+    background-color: v.$primario;
+    margin-top: 66.9px;
+    @include m.tablet { 
+        height: 69rem;
+        margin-top: 72.9px;
+        
+     }
+    @include m.desktopUW { 
+        margin-top: 72.9px;
+        height: 87rem;
+     }
+}
+
+swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: var(--swiper-theme-color);
+    fill: none;
+    stroke-dashoffset: calc(180.6 * (1 - var(--progress)));
+    stroke-dasharray: 180.6;
+    transform: rotate(-90deg);
+}
+
+//slider
+.header {
+    width: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75rem;
+    @include m.tablet{
+        padding: 2rem 0;
+        height: 69rem;
+    }
+    @include m.desktopUW{
+        padding: 2rem 0;
+        height: 87rem;
+    }
+}
+
+.portada1 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portadaMobil4.jpg);
+    background-position: left;
+    @include m.tablet {
+        background-image: url(../img/portada.jpg);
+       
+    }
+}
+
+.portada2 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portadaMobil61.jpg);
+   
+    @include m.tablet {
+        background-image: url(../img/portada61.jpg);
+        
+    }
+}
+
+.portada3 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portadaMobil3.jpg);
+    @include m.tablet {
+        background-image: url(../img/portada2.jpg);
+        
+    }
+}
+
+.portada4 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portadaMobil41.jpg);
+    @include m.tablet {
+        background-image: url(../img/portada41.jpg);
+    }
+}
+
+.portada5 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portadaMobil71.jpg);
+    @include m.tablet {
+        background-image: url(../img/portada71.jpg);
+    }
+}
+.portada6 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portadaMobil71.jpg);
+    @include m.tablet {
+        background-image: url(../img/portada71.jpg);
+    }
+}
+.portada7 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portada6slider.jpg);
+    @include m.tablet {
+        background-image: url(../img/portada6slider.jpg);
+    }
+}
+.portada8 {
+    background-image: linear-gradient(rgba(36, 35, 35, 0.93),rgba(148, 54, 0, 0.7)),url(../img/portada7slider.jpg);
+    @include m.tablet {
+        background-image: url(../img/portada7slider.jpg);
+    }
+}
+
+
+.visible {
+    left: 0%;
+}
+
+//POSISION DEL ICONO Y COLOR MENU
+.toggle {
+
+    &__menu {
+        color: v.$blanco;
+        cursor: pointer;
+        font-size: 3rem;
+        margin-right: 2rem;
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+}
+
+.hero {
+
+    margin-top: 25rem;
+    height: 45rem;
+
+    @include m.tablet {
+        margin-top: 1rem;
+        align-items: center;
+        @include m.grid(2, 5rem);
+
+    }
+
+    &__span {
+        font-weight: 900;
+        color: v.$primario;
+    }
+
+    &__span2 {
+        font-weight: 900;
+        color: v.$primario;
+
+        @include m.tablet {
+            color: v.$secundario;
+        }
+    }
+
+    &__span3 {
+        font-weight: 900;
+        color: v.$blanco;
+    }
+
+    &__nombre {
+        font-weight: 800;
+        color: v.$secundario;
+        font-size: 3.2rem;
+        line-height: 1.2;
+        margin-top: 0rem;
+        text-align: center;
+        @include m.tablet { 
+            line-height: 1;
+            font-weight: 900;
+            font-size: 5rem;
+            
+         }
+
+
+        @include m.tablet {
+            text-align: start;
+            margin-bottom: 1rem;
+            font-size: 6.3rem;
+        }
+    }
+
+    &__titulo {
+
+        border-radius: 10px;
+        margin-top: 1rem;
+        font-style: italic;
+        font-weight: 400;
+        width: auto;
+        color: v.$primario;
+        font-size: 2rem;
+        text-align: center;
+
+
+        @include m.tablet {
+            color: v.$blanco;
+            margin-top: 1rem;
+            text-align: start;
+            font-size: 2.7rem;
+
+        }
+    }
+
+    &__web {
+        display: none;
+
+        @include m.tablet {
+            display: inline;
+            background-color: v.$secundario;
+            width: 22rem;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 2rem;
+            padding: 1rem 2rem 1rem 2rem;
+            border-radius: 20px;
+            background: v.$secundario;
+            box-shadow: 20px 20px 60px v.$primario,
+                -20px -20px 60px v.$primario;
+            margin-right: 0;
+            margin-left: 0;
+            width: 35rem;
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+
+    &__sistema {
+        display: none;
+
+        @include m.tablet {
+            display: inline;
+            color: v.$blanco;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 3.3rem;
+            font-size: 6rem;
+            text-align: center;
+        }
+    }
+
+    &__contable {
+        display: none;
+
+        @include m.tablet {
+            display: inline;
+            color: v.$primario;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 2rem;
+            font-size: 3.6rem;
+            text-align: center;
+        }
+    }
+
+
+    &__webs {
+        font-weight: 900;
+        font-style: italic;
+    }
+}
+
+//ICONO DEL MENU
+.bars__menu {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    ;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+
+.bars__menu span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: v.$blanco;
+    margin-top: 6px;
+    transform-origin: 0px 100%;
+    transition: all 400ms;
+}
+
+.activelinea1__bars-menu {
+
+    transform: rotate(45deg) translate(-2px, 1px);
+
+}
+
+.activelinea2__bars-menu {
+
+    opacity: 0;
+    margin-left: -30px;
+
+}
+
+.activelinea3__bars-menu {
+    transform: rotate(-45deg) translate(-4px, 2px);
+
+}

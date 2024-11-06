@@ -1,0 +1,71 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.appRestaurante{
+    &__grid{
+
+        margin: 2rem;
+        align-items: center;
+        
+        @include m.tablet {
+            margin: 0.01rem;
+            @include m.grid(2, 10rem);
+        }
+
+
+    }
+    &__imagen{
+
+        background-image: url(../img/appRestaurante.png);
+        background-repeat: no-repeat;
+        background-position: center 5rem ;
+        background-size:35rem;
+        text-align: center;
+        height: 50rem;
+        transition: all 0.2s ease-in-out;
+
+        @include m.tablet {
+            background-size: 55rem;
+            padding: 5rem 0;
+            text-align: center;
+            height: 78rem;
+        }
+        
+        
+        &:hover {
+            transform: rotateZ(-30deg);
+        }
+      
+     
+    }
+    &__contenido{
+        padding: 2rem;
+        @include m.tablet {
+            padding: 5rem;
+        }
+    }
+    &__heading{
+        color: v.$primario;
+    }
+    &__boton{
+     
+        padding: 1.5rem 10rem;
+        color: v.$blanco;
+        background-color: v.$secundario;
+        display: block;
+        margin: 0 auto;
+        font-weight: 600;
+        font-size: 1.8rem;
+
+        @include m.tablet {
+            padding: 2rem 15rem;
+        }
+        
+        &:hover{
+            transition: all 0.2s ease-in-out;
+            background-color: v.$primario;
+        }
+    }
+    
+  
+}

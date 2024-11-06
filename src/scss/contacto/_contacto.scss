@@ -1,0 +1,114 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.contacto{
+    background-image: linear-gradient(rgba(27, 28, 31, 0.829), rgba(47, 52, 59, 0.7)), url(../img/colage1.jpg);
+    background-position: bottom bottom bottom;
+    background-size: cover;
+    text-align: center;
+    color: v.$blanco;
+    padding: 5rem;
+
+
+    &__heading {
+        padding: 6rem;
+        margin-top: 5rem;
+        font-size: 3rem;
+
+        @include m.tablet {
+            padding: 3rem;
+            font-size: 4rem;
+            margin-top: 6rem;
+        }
+    }
+}
+
+.ubicacion{
+
+    margin-top: 5rem;
+    &__grid{
+       
+        border: solid 0.01px #cfcfcf;
+        @include m.tablet { 
+            @include m.grid(2, 0rem);
+         }
+         
+        }
+    }
+    .correo{
+        padding: 2rem;
+        border-right: solid 0.01px #cfcfcf;
+        display: flex;
+        flex-direction: column;
+        @include m.tablet { 
+            padding: 5rem;
+            
+         }
+
+        &__icono{
+            color: #757474;
+            padding: 0.5rem;
+        }
+        &__heading{
+            padding-top: 2rem;
+            color: v.$secundario;
+            font-weight: 100;
+            text-transform: none;
+        }
+        &__input{
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            border: solid 0.01px #cfcfcf;
+            @include m.tablet { 
+                padding: 1rem;
+                
+             }
+       }
+       &__boton{
+          margin: 2rem 1rem;
+          color: v.$blanco;
+          background-color: v.$primario;
+          padding: 1.5rem;
+          border-radius: 5rem;
+          
+          &:hover{
+            transition: 0.3s;
+            background-color: v.$secundario;
+          }
+       }
+       &__cel{
+            display: flex;
+            flex-direction: row;
+       }
+    }
+    .datos{
+        padding: 5rem;
+        color: #757474;
+        @include m.tablet { 
+             margin-top: 9rem;
+            
+          }
+
+         &__grid{
+            margin: 1rem;
+            @include m.tablet { 
+                margin: 3rem;
+                
+             }
+            @include m.flex(2, 1, 3rem);
+            align-items: flex-start;
+            
+            
+         }
+       
+        &__direccion2{
+             display: flex;
+             flex-direction: column;
+             gap: 1rem;
+            color: v.$secundario;
+            
+          margin-top: 2rem;
+         }
+
+     }
+     

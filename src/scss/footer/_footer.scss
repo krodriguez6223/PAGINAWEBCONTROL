@@ -1,0 +1,79 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.footer {
+    background-image: linear-gradient(rgba(27, 28, 31, 0.89), rgba(47, 52, 59, 0.7)), url(../img/footer.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 8rem 0 0 0;
+    color: #f3f0f0;
+    text-align: center;
+    @include m.tablet { 
+        text-align: none;
+        
+     }
+
+    &__grid {
+        padding: 2rem;
+        @include m.tablet {
+            @include m.grid(4, 1rem);
+            align-items: center;
+            justify-items: center;
+            margin: 5rem;
+            margin-bottom: 8rem;
+        }
+    }
+
+    &__logo {
+
+        &--empresa {
+            display: block;
+            margin: auto;
+            height: 10rem;
+            padding: 1rem;
+        }
+
+        &--icon {
+            color: v.$blanco;
+            padding: 1rem;
+            font-size: 3rem;
+            transition: transform;
+            &:hover{
+                color: v.$primario;
+                transform:scale(5deg);
+            }
+        }
+
+        &--siguenos {
+            font-size: 2rem;
+            display: block;
+            color: v.$blanco;
+            padding: 1rem;
+        }
+    }
+
+    &__contenido {
+        padding: 5rem;
+        @include m.tablet {
+            padding: 0;
+            @include m.flex(1, column, 1rem);
+
+        }
+    }
+
+    &__derechos {
+        text-align: center;
+        background-color: v.$secundario;
+        padding: 2rem;
+        color: v.$blanco;
+        @include m.tablet { 
+            padding: 1.5rem;
+            
+         }
+    }
+
+    &__heading {
+        font-size: 2rem;
+        color: v.$blanco;
+    }
+}

@@ -1,0 +1,155 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.modulos {
+    padding: 1.3rem;
+    height: 70rem;
+    background-image: url(../img/portadda4mobil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include m.tablet {
+        background-image: url(../img/portadaModulos.png);
+        background-color: rgb(221, 217, 217);
+        height: 60rem;
+        padding: 5rem;
+    }
+    @include m.desktopUW {
+        height:73rem;
+    }
+
+    &__heading {
+        padding: 0.3rem;
+        margin-top: 2rem;
+        color: v.$secundario;
+        font-size: 4rem;
+        width: 80%;
+        font-weight: 900;
+        @include m.tablet {
+            margin-top: 5rem;
+            margin-top: 0rem;
+            width: 30%;
+        }
+        @include m.desktopUW {
+           margin-left: 17rem;
+        }
+    }
+
+    &__span {
+        color: v.$primario;
+    }
+
+    &__grid {
+        margin-top: 3rem;
+        grid-template-columns: repeat(1, 1fr);
+        display: grid;
+        justify-items: center;
+        
+        @include m.tablet {
+            margin-left: 2rem;
+            margin-top: 7rem;
+            margin-top: 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40rem;
+        }
+       
+        @include m.desktopUW {
+           margin-left: 5rem;
+        }
+    }
+
+    &__grid2 {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        margin-top: 2rem;
+        gap: 1.5rem;
+        @include m.tablet{
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+    }
+
+    &__contenido {
+        background-color: v.$blanco;
+        display: flex;
+        padding: 0.5rem 1.3rem;
+        border-radius: 1rem;
+        align-items: center;
+        color: v.$secundario;
+        font-weight: 600;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transition: transform;
+
+        
+        @include m.tablet{
+            padding: 1rem 2rem;
+           
+            &:hover {
+                transition: .4s;
+                box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+                border-left: solid 10px v.$primario;
+                padding: 1rem 1.5rem;
+            }
+        }
+    }
+
+    &__icon {
+        color: v.$blanco;
+
+        &--roles {
+            background-color: rgb(233, 75, 75);
+
+        }
+
+        &--cartera {
+            background-color: #22af47;
+        }
+
+        &--contabilidad {
+            background-color: #046b73;
+        }
+
+        &--dimm {
+            background-color: #524c4c;
+        }
+
+        &--tesoreria {
+            background-color: rgb(4 107 115);
+        }
+
+        &--otrascompra {
+            background-color: #3a55b1;
+        }
+
+        &--compras {
+            background-color: #ed1b60;
+        }
+
+        &--ventas {
+            background-color: #ff6028;
+        }
+        &--medico {
+            background-color: #eb002fa7;
+        }
+        &--gimnasio {
+            background-color: #5f00a8;
+        }
+        &--boleteria {
+            background-color: #bd1f00;
+        }
+        &--activosFijos {
+            background-color: #b4a500;
+        }
+        &--indicadoresF {
+            background-color: #261266;
+        }
+        &--hoteleria {
+            background-color: #00678f;
+        }
+        &--inventario {
+            background-color: #11a500;
+        }
+    }
+
+}

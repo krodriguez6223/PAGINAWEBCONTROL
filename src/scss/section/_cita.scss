@@ -1,0 +1,53 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.cita{
+    background-image: linear-gradient(rgba(27, 28, 31, 0.829),rgba(47, 52, 59, 0.7)),url(../img/portada8.jpg);
+    background-attachment: fixed;
+    background-position: center 5rem ;
+    background-size: cover;
+    padding: 5rem 0;
+    text-align: center;
+    height: 60rem;
+    @include m.tablet { 
+        height: 41rem;
+     }
+     @include m.desktopUW  { 
+            height: 43rem;
+      }
+
+    &__heading{
+       text-transform: uppercase;
+       font-weight: 400;
+        color: v.$blanco;
+        padding: 3rem;
+        font-size: 3rem;
+        @include m.tablet { 
+            padding:1rem;
+            font-size: 5rem;
+            
+         }
+    }
+    &__texto{
+        color: v.$blanco;
+        max-width: 60rem;
+        margin: 0 auto;
+        line-height: 2;
+        padding: 2rem;
+        @include m.tablet { 
+            padding: 1rem;
+         }
+
+    }
+    &__enlace{
+        @include m.boton(v.$primario, v.$blanco);
+        font-size: 2rem;
+        padding: 1rem 8rem;
+        @include m.tablet { 
+            padding: 2rem 10rem;
+            
+         }
+
+    }
+
+}

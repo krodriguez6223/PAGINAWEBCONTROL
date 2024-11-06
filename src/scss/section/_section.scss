@@ -1,0 +1,65 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.consulta {
+    margin: 0;
+    //background-color: v.$secundario;
+    background-attachment: none;
+    background-image: linear-gradient(rgba(27, 28, 31, 0.829),rgba(47, 52, 59, 0.7)),url(../img/consultaRuc2.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 30rem 3rem;
+    
+    @include m.tablet {
+        background-attachment: fixed;
+        background-image: linear-gradient(rgba(27, 28, 31, 0.7),rgba(47, 52, 59, 0.7)),url(../img/portada9.jpg);
+        padding: 15rem;
+    }
+    &__titulo {
+        color: v.$blanco;
+        font-size: 4rem;
+    }
+    &__span{
+        color: v.$primario;
+    }
+    &__input {
+        padding: 1.5rem 3rem;
+        background-color: v.$primario;
+        border:none;
+        border-radius: 5rem;
+        margin-top: 2rem;
+        outline:none;
+        color: fieldtext;
+        &:focus {
+            border: none
+        }
+        &::placeholder{
+            color: rgb(255, 255, 255);
+            font-size: 2rem;
+        }
+        @include m.tablet{
+          padding: 1.5rem 12rem;
+
+      }   
+    }
+    &__icon{
+        width: 4rem;
+        color: v.$blanco;
+        margin-left: 1rem;
+        margin-bottom: -1.1rem;
+    }
+    
+    input[type="text"]{
+        color:v.$blanco; /* Cambia el color del texto dentro del input */
+        text-align: center; /* Alinea el texto en el centro */
+        font-size: 15px; /* Ajusta el tamaño del texto */
+        
+        @include m.tablet { 
+            font-size: 22px; /* Ajusta el tamaño del texto */
+            
+         }
+      
+    }
+}
+
